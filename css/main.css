@@ -1,4 +1,9 @@
+html, body {
+    background-color: black;
+}
+
 h1 {
+    color: white;
     text-align: center;
 }
 
@@ -24,10 +29,6 @@ h1 {
 
 .keyboard-row button.wide-button {
     flex-grow: 1.5;
-}
-
-.keyboard-row button.space-button {
-    flex-grow: 1;
 }
 
 .spacer-half {
