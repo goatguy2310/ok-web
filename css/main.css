@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+#keyboard {
+    align-content: center;
+    justify-content: center;
+}
+
+.keyboard-row {
+    max-width: 580px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.keyboard-row button {
+    height: 58px;
+    background-color: rgb(133, 133, 133);
+    color: white;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.keyboard-row button.space-button {
+    flex-grow: 1;
+}
+
+.spacer-half {
+    flex-grow: 0.5;
+}
