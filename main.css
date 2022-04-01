@@ -8,8 +8,8 @@ h1 {
 }
 
 #gameboard {
-    max-width: 420px;
-    height: 600px;
+    max-width: 450px;
+    height: 680px;
     margin: auto;
 
     display: grid;
@@ -25,6 +25,8 @@ h1 {
     outline: 2px solid gray;
     color: white;
     font-size: 50px;
+
+    margin: 5px 5px 5px 5px;
 
     text-align: center;
     align-content: center;
@@ -61,9 +63,4 @@ h1 {
 
 .spacer-half {
     flex-grow: 0.5;
-}
-
-.input {
-    align-content: center;
-    justify-content: center;
 }
