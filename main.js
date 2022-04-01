@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     createBoard();
-    setupInput();
     pickWord();
     let word = "";
 
@@ -15,25 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function setupInput() {
-        const inp = document.querySelector(".main-input input");
-        inp.onblur = function() {
-            var x = window.scrollX, y = window.scrollY;
-            inp.focus();
-            window.scrollTo(x, y);
-        };
-
-        inp.onchange = function() {
-            var x = window.scrollX, y = window.scrollY;
-            // inp.focus();
-            window.scrollTo(x, y);
-        };
-    }
-
     function pickWord() {
-        var fr = new FileReader();
-        fr.onload = function(){
-            word = fr.result;
+        var text = null;
+        var req = new XMLHttpRequest();
+        req.open("GET", "http://127.0.0.1:5500//words.txt", false);
+        req.send();
+        if(req.status === 200 || req.status === 0) {
+            text = req.responseText;
         }
     }
 
@@ -47,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(key == "space") {
 
             } else if(key == "del") {
-
+                deleteLetter(key);
             } else if(key == "enter") {
 
             } else {
@@ -62,5 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const sq = document.getElementById(String(cur));
         sq.textContent = letter.toUpperCase();
         cur++;
+    }
+
+    function deleteLetter() {
+        if(Math.floor(cur / 7) == curWord && cur % 7 == 0) return;
+
+        cur--;
+        const sq = document.getElementById(String(cur));
+        sq.textContent = "";
     }
 });
