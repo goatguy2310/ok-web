@@ -1,0 +1,69 @@
+html, body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#gameboard {
+    max-width: 420px;
+    height: 600px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    margin-bottom: 10px;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.gamesquare {
+    outline: 2px solid gray;
+    color: white;
+    font-size: 50px;
+
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#keyboard {
+    align-content: center;
+    justify-content: center;
+}
+
+.keyboard-row {
+    max-width: 580px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.keyboard-row button {
+    height: 58px;
+    background-color: rgb(133, 133, 133);
+    color: white;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.keyboard-row button.space-button {
+    flex-grow: 1;
+}
+
+.spacer-half {
+    flex-grow: 0.5;
+}
+
+.input {
+    align-content: center;
+    justify-content: center;
+}
