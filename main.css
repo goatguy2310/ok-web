@@ -9,12 +9,12 @@ h1 {
 
 #gameboard {
     max-width: 450px;
-    height: 680px;
+    height: 450px;
     margin: auto;
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     margin-bottom: 10px;
 
     align-content: center;

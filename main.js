@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createBoard() {
         const board = document.getElementById("gameboard");
 
-        for(let i = 0; i < 70; i++) {
+        for(let i = 0; i < 49; i++) {
             let sq = document.createElement("div");
             sq.classList.add("gamesquare");
             sq.setAttribute("id", i);
