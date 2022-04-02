@@ -8,8 +8,8 @@ h1 {
 }
 
 #gameboard {
-    max-width: 450px;
-    height: 450px;
+    max-width: 490px;
+    height: 490px;
     margin: auto;
 
     display: grid;
