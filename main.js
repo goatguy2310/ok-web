@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function pickWord() {
         let req = new XMLHttpRequest();
-        req.open("GET", "http://127.0.0.1:5500//words.txt", false);
+        req.open("GET", window.location.href + "//words.txt", false);
         req.send();
         if(req.status === 200 || req.status === 0) {
             word = noTone(req.responseText);
