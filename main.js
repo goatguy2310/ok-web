@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             deleteLetter();
         } else if(event.key === " ") {
             addSpace();
+            event.preventDefault();
         } else if((/[a-zA-Z]/).test(event.key) && event.key.length == 1) {
             addLetter(event.key);
         }
@@ -130,13 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function enterWord() {
+        w = w.toLowerCase();
         if(w.length != 7) {
             alert("Not 7 letters!!!!!!!");
-            return;
-        }
-
-        if(!arr.includes(w)) {
-            alert("Not a real word!!!!!!");
             return;
         }
 
@@ -145,14 +142,30 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        if(!arr.includes(w)) {
+            alert("Not a real word!!!!!!");
+            return;
+        }
+
+        let cnt = [];
+        for(let i = 0; i < 30; i++) {
+            cnt.push(0);
+        }
         for(let i = cur - 7, j = 0; i < cur; i++, j++) {
             let sq = document.getElementById(String(i));
             if(sq.textContent.toLowerCase() == word[j]) {
                 sq.style.backgroundColor = "rgb(83,141,78)";
                 sq.style.outlineColor = "rgb(83,141,78)";
-            } else if(word.includes(sq.textContent.toLowerCase())) {
+            } else cnt[charCode(word[j])]++;
+        }
+
+        for(let i = cur - 7, j = 0; i < cur; i++, j++) {
+            let sq = document.getElementById(String(i));
+            if(cnt[charCode(w[j])] != 0) {
                 sq.style.backgroundColor = "rgb(181,159,59)";
                 sq.style.outlineColor = "rgb(181,159,59)";
+
+                cnt[charCode(w[j])]--;
             }
         }
 
@@ -164,5 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
         curWord++;
         spaceNum = 0;
         w = "";
+    }
+
+    function charCode(letter) {
+        if(letter == " ") return 29;
+        else return letter.charCodeAt(0) - "a".charCodeAt(0);
     }
 });
