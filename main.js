@@ -156,6 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if(sq.textContent.toLowerCase() == word[j]) {
                 sq.style.backgroundColor = "rgb(83,141,78)";
                 sq.style.outlineColor = "rgb(83,141,78)";
+                for(let i = 0; i < btn.length; i++) {
+                    if(btn[i].getAttribute("data-key") === word[j]) {
+                        btn[i].style.backgroundColor = "rgb(83,141,78)";
+                        break;
+                    }
+                }
             } else cnt[charCode(word[j])]++;
         }
 
@@ -164,6 +170,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if(cnt[charCode(w[j])] != 0) {
                 sq.style.backgroundColor = "rgb(181,159,59)";
                 sq.style.outlineColor = "rgb(181,159,59)";
+
+                for(let i = 0; i < btn.length; i++) {
+                    if(btn[i].getAttribute("data-key") === w[j]) {
+                        btn[i].style.backgroundColor = "rgb(83,141,78)";
+                        break;
+                    }
+                }
 
                 cnt[charCode(w[j])]--;
             }
