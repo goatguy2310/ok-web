@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for(let i = cur - 7, j = 0; i < cur; i++, j++) {
             let sq = document.getElementById(String(i));
-            if(cnt[charCode(w[j])] != 0) {
+            if(cnt[charCode(w[j])] != 0 && sq.style.backgroundColor !== "rgb(83,141,78)") {
                 sq.style.backgroundColor = "rgb(181,159,59)";
                 sq.style.outlineColor = "rgb(181,159,59)";
 
