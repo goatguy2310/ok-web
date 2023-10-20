@@ -1,4 +1,4 @@
-# VIET-WORDLE
+# Viet Wordle
 Vietnamese Wordle :D
 
 No tone marks for now :'(
